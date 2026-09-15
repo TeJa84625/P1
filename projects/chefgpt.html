@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChefGPT | Food | Teja Gavara Portfolio</title>
+    
+    <meta name="description" content="Pantry-to-plate recipe generator minimizing household food waste with AI substitution logic.">
+    <meta name="keywords" content="Food, AI, Sustainability, Mobile, Flutter, OpenAI API, Firebase, ChefGPT, Teja Gavara, G Teja Portfolio, Software Development">
+    <meta name="author" content="Teja Gavara">
+    
+    <meta property="og:title" content="ChefGPT | Food | Teja Gavara">
+    <meta property="og:description" content="Pantry-to-plate recipe generator minimizing household food waste with AI substitution logic.">
+    <meta property="og:image" content="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg">
+    <meta property="og:url" content="https://tejagavara.vercel.app/projects/chefgpt.html">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="../images/favicon.ico?v=2" />
+    <link rel="stylesheet" href="../output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../project_detail.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SEO Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ChefGPT",
+        "description": "Pantry-to-plate recipe generator minimizing household food waste with AI substitution logic.",
+        "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
+        "keywords": "Food, AI, Sustainability, Mobile, Flutter, OpenAI API, Firebase, ChefGPT, Teja Gavara, G Teja Portfolio, Software Development",
+        "datePublished": "2025-10-20",
+        "dateModified": "2026-03-15",
+        "author": {
+            "@type": "Person",
+            "name": "Teja Gavara"
+        }
+    }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-black">
+    <header
+        class="bg-white shadow-md py-4 px-6 md:px-10 lg:px-16 flex justify-between items-center rounded-b-lg sticky top-0 z-50 dark:bg-gray-800 dark:text-white">
+        <div class="flex items-center">
+        <a href="../index.html"
+            class="text-2xl font-bold text-gray-800 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition duration-300 ease-in-out">
+            <span class="text-blue-600">G</span>TEJA
+        </a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-gray-700 dark:text-white focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        </button>
+
+        <nav id="menu" class="hidden md:flex">
+        <ul class="flex flex-col md:flex-row md:space-x-8">
+            <li><a href="../index.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Home</a></li>
+            <li><a href="../projects.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Projects</a></li>
+            <li><a href="../about.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">About</a></li>
+            <li><a href="../contact.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <nav id="mobile-menu" class="hidden bg-white shadow-md rounded-b-lg md:hidden px-6 py-4 dark:bg-gray-900">
+        <ul class="flex flex-col space-y-3">
+            <li><a href="../index.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Home</a></li>
+            <li><a href="../projects.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Projects</a></li>
+            <li><a href="../about.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">About</a></li>
+            <li><a href="../contact.html" class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="p-0 sm:p-6 md:p-10 lg:p-16">
+        <div class="p-0 sm:bg-white sm:p-6 sm:rounded-lg sm:shadow-lg dark:bg-gray-900">
+            <div class="back-button-container mb-6 ">
+                <a href="../projects.html" class="inline-flex items-center bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-md shadow-sm transition duration-300 ease-in-out dark:bg-gray-400">
+                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6l6 6l1.41-1.41z" /></svg>
+                    Back to Projects
+                </a>
+            </div>
+            <section class="project-details-page dark:bg-gray-800 dark:text-gray-100" id="projectDetailsPage">
+                
+        <div class="relative flex items-center justify-center w-full mb-6 mt-0">
+            <h1 class="text-blue-600 dark:text-blue-800 font-bold text-5xl sm:text-6xl m-0 text-center">ChefGPT</h1>
+            <div class="absolute right-0 sm:right-4">
+                <button type="button" onclick="shareProject(this)" class="p-2.5 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Share project link">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                    </svg>
+                </button>
+                <span class="share-toast hidden absolute -top-8 right-0 bg-gray-900 text-white text-xs font-semibold px-2 py-1 rounded shadow-lg whitespace-nowrap z-20 transition-all">
+                    Link copied!
+                </span>
+            </div>
+        </div>
+
+        <script>
+            function shareProject(b) {
+                const u = window.location.href;
+                if (navigator.share) {
+                    navigator.share({ title: 'ChefGPT', text: 'Check out ChefGPT by Teja Gavara:', url: u }).catch(() => {});
+                } else {
+                    navigator.clipboard.writeText(u).then(() => {
+                        const t = b.nextElementSibling;
+                        t.classList.remove('hidden');
+                        setTimeout(() => t.classList.add('hidden'), 2000);
+                    });
+                }
+            }
+        </script>
+
+        <div class="meta-info">
+            <div><strong>Uploaded:</strong> 2025-10-20</div>
+            <div><strong>Last Updated:</strong> 2026-03-15</div>
+            <div><strong>Views:</strong> 6120</div>
+            <div><strong>Downloads:</strong> 4020</div>
+            <div><strong>Difficulty:</strong> <span class="text-green-600">Beginner</span></div>
+        </div>
+
+        <div class="technologies">
+            <h3>Technologies Used:</h3>
+            <span>Flutter</span><span>OpenAI API</span><span>Firebase</span>
+        </div>
+    
+        <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Project Images</h3>
+        <div class="image-carousel-container relative">
+            <div class="image-carousel flex transition-transform duration-500 ease-in-out" id="imageCarousel">
+                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="ChefGPT Screenshot by Teja Gavara" class="carousel-image cursor-pointer w-full flex-shrink-0 object-contain h-[450px]">
+            </div>
+            
+        </div>
+        <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Project Overview</h3>
+        <p class="short-description">Pantry-to-plate recipe generator minimizing household food waste with AI substitution logic.</p>
+        <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Project Details</h3>
+        <p class="long-description">ChefGPT scans photographs of refrigerator contents and pantry cupboards, instantly offering gourmet recipe alternatives tailored to dietary restrictions and minimizing ingredients that are about to spoil.</p>
+    
+        <div class="sponsors-section">
+            <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Our Sponsors</h3>
+            <div class="sponsors-list"><span class="sponsor-name">Culinary Arts Fund</span></div>
+        </div>
+        <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Project Video Demo</h3>
+        <div class="video-embed relative w-full pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full rounded-lg"></iframe>
+        </div>
+        <div class="members-section">
+            <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Team Members</h3>
+            <div class="members-scroll-container">
+                <div class="members-list"><span class="member-name">Zendaya Coleman</span><span class="member-name">Timothee Chalamet</span></div>
+            </div>
+        </div>
+        <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em] flex items-center gap-2">
+            <i data-lucide="code" class="w-6 h-6 text-blue-600"></i> Code Snippet
+        </h3>
+
+        <div class="code-container bg-[#1e1e1e] relative rounded-lg shadow-xl overflow-hidden border border-gray-700">
+            <div class="bg-[#2d2d2d] px-4 py-2.5 flex items-center justify-between border-b border-gray-700">
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                    <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                    <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                    <span class="text-s text-gray-400 ml-2 font-mono flex items-center gap-1.5">
+                        <i data-lucide="file-code" class="w-3.5 h-3.5 text-blue-400"></i> chefgpt
+                    </span>
+                </div>
+                <button id="copyCodeButton" class="flex items-center gap-1.5 text-s text-gray-400 hover:text-gray-200 bg-gray-800 hover:bg-gray-700 px-2.5 py-1 rounded transition-colors duration-150" aria-label="Copy code">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i> 
+                    <span>Copy</span>
+                </button>
+            </div>
+            
+            <pre class="line-numbers !bg-[#1e1e1e] !m-0 !p-4 overflow-x-auto text-gray-100 font-mono text-sm"><code class="language-javascript">import &#x27;package:flutter/material.dart&#x27;;
+
+void main() {
+  runApp(MaterialApp(home: Scaffold(body: Text(&#x27;ChefGPT Ready&#x27;))));
+}</code></pre>
+        </div> 
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+        <div class="action-buttons-container flex justify-center gap-4 mt-8 flex-wrap w-full"><a href="https://github.com/example/chefgpt" target="_blank" rel="noopener noreferrer" class="action-button bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105" id="projectActionButton">Download</a><a href="../join_project.html?projectName=ChefGPT&projectId=ChefGPT" class="action-button join-project-button bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition transform hover:scale-105">Join This Project</a></div>
+            </section>
+        </div>
+    </main>
+    <div id="lightbox" class="lightbox fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden" style="display: none;">
+        <span class="lightbox-close absolute top-4 right-6 text-white text-5xl font-bold cursor-pointer hover:text-gray-400">&times;</span>
+        <img class="lightbox-content max-w-full max-h-[80vh] rounded-lg transition-transform duration-200 cursor-grab active:cursor-grabbing" id="lightboxImage" />
+    </div>
+    
+    
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(btn && mobileMenu) {
+            btn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            document.addEventListener('click', (e) => {
+                if (!btn.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.add('hidden');
+            });
+        }
+
+        const copyBtn = document.getElementById('copyCodeButton');
+        const codeBlock = document.querySelector('.code-container code');
+        if (copyBtn && codeBlock) {
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(codeBlock.innerText);
+                    copyBtn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i> <span>Copied!</span>';
+                    copyBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                    copyBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+                    lucide.createIcons();
+                    setTimeout(() => {
+                        copyBtn.innerHTML = '<i data-lucide="copy" class="w-3.5 h-3.5"></i> <span>Copy</span>';
+                        copyBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                        copyBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                        lucide.createIcons();
+                    }, 3000);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+            });
+        }
+
+        const carousel = document.getElementById('imageCarousel');
+        const prevBtn = document.getElementById('prevImage');
+        const nextBtn = document.getElementById('nextImage');
+        if (carousel) {
+            let currentIndex = 0;
+            const images = carousel.querySelectorAll('.carousel-image');
+            const updateCarousel = () => carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+                updateCarousel();
+            });
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+                updateCarousel();
+            });
+        }
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const closeBtn = document.querySelector('.lightbox-close');
+        let currentScale = 1;
+
+        document.querySelectorAll('.carousel-image').forEach(img => {
+            img.addEventListener('click', (e) => {
+                currentScale = 1;
+                if(lightboxImg) {
+                    lightboxImg.style.transform = `scale(${currentScale})`;
+                    lightboxImg.src = e.target.src;
+                }
+                if(lightbox) {
+                    lightbox.classList.remove('hidden');
+                    lightbox.style.display = 'flex';
+                }
+            });
+        });
+
+        if (closeBtn && lightbox) closeBtn.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            lightbox.style.display = 'none';
+        });
+        
+        if (lightbox) lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.style.display = 'none';
+            }
+        });
+
+        if (lightboxImg) {
+            lightboxImg.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                currentScale += e.deltaY < 0 ? 0.1 : -0.1;
+                currentScale = Math.max(0.5, Math.min(currentScale, 3)); 
+                lightboxImg.style.transform = `scale(${currentScale})`;
+            }, { passive: false });
+        }
+    </script>
+    
+</body>
+</html>

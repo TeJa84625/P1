@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Name: | Portfolio</title>
+    
+    <meta name="description" content="Short Description:">
+    <meta name="keywords" content="">
+    <meta name="author" content="Teja Gavara">
+    
+    <meta property="og:title" content="Project Name: | Portfolio">
+    <meta property="og:description" content="Short Description:">
+    <meta property="og:image" content="https://placehold.co/600x400?text=Project+Name:">
+    <meta property="og:url" content="https://yourwebsite.com/projects/project-name.html">
+
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="/images/favicon.ico?v=2" />
+    <link rel="stylesheet" href="../output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../project_detail.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SEO Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Project Name:",
+      "description": "Short Description:",
+      "image": "https://placehold.co/600x400?text=Project+Name:",
+      "keywords": "",
+      "dateModified": "2026-09-15"
+    }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-black">
+    <main class="p-0 sm:p-6 md:p-10 lg:p-16">
+        <div class="p-0 sm:bg-white sm:p-6 sm:rounded-lg sm:shadow-lg dark:bg-gray-900">
+            <div class="back-button-container mb-6 ">
+                <a href="../portfolio" class="inline-flex items-center bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-md shadow-sm transition duration-300 ease-in-out dark:bg-gray-400">
+                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6l6 6l1.41-1.41z" /></svg>
+                    Back to Projects
+                </a>
+            </div>
+            <section class="project-details-page dark:bg-gray-800 dark:text-gray-100" id="projectDetailsPage">
+                
+        <h2 class="text-blue-600 dark:text-blue-800 font-bold text-6xl mb-6 mt-0 text-center w-full">Project Name:</h2>
+        <div class="meta-info">
+            <div><strong>Uploaded:</strong> 2026-09-15</div>
+            <div><strong>Last Updated:</strong> 2026-09-15</div>
+            <div><strong>Views:</strong> 0</div>
+            
+            <div><strong>Difficulty:</strong> <span class="text-green-600">Beginner</span></div>
+        </div>
+
+        <div class="technologies">
+            <h3>Technologies Used:</h3>
+            <p>No technologies listed.</p>
+        </div>
+    
+        <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Project Overview</h3>
+        <p class="short-description">Short Description:</p>
+        <h3 class="border-b-2 border-[#e0e0e0] pb-[10px] mt-[35px] mb-[20px] w-full text-[1.8em]">Project Details</h3>
+        <p class="long-description">Long Description:</p>
+    <div class="action-buttons-container flex justify-center gap-4 mt-4 flex-wrap w-full"><a href="../join_project.html?projectName=Project Name:&projectId=" class="action-button join-project-button">Join This Project</a></div>
+            </section>
+        </div>
+    </main>
+    <div id="lightbox" class="lightbox fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+        <span class="lightbox-close absolute top-4 right-6 text-white text-5xl font-bold cursor-pointer">&times;</span>
+        <img class="lightbox-content max-w-full max-h-[80vh] rounded-lg" id="lightboxImage" />
+    </div>
+</body>
+</html>

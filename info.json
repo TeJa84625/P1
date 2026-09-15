@@ -1,0 +1,37 @@
+{
+    "profile": "/images/profile11.png",  
+    "resume": "https://github.com/TeJa84625/Apps/blob/main/Data/CV.pdf?raw=true",
+    "upi": "tejagavara@ybl",
+    "form": "https://docs.google.com/forms/d/e/1FAIpQLSeJnGaYX57yuohra8zfaH85MY_RRMZdMU23m2DwYH2FEKh4MA/formResponse?usp=pp_url&entry.692037109=(a)&entry.625490328=(b)&entry.656923536=(c)&entry.361199134=(d)&entry.2067384019=(e)&entry.1113722693=(f)",
+    "skills": "Python,C++,Java,Firebase,React Native,Node.js,MySQL,Git,IoT,Game Design (UE5)",
+    "certifications": [
+    {
+        "name": "Privacy and Security in Online Social Media - NPTEL",
+        "photo": "/Data/Privacy and Security in Online Social Media.jpg"
+    },
+    {
+        "name": "AWS Certified AI Practitioner - AWS",
+        "photo": "/Data/AWS Certified AI Practitioner certificate.jpg"
+    },
+    {
+        "name": "Joy of Computing using Python - NPTEL",
+        "photo": "/Data/The Joy of Computing using Python.jpg"
+    },
+    {
+        "name": "A Complete Guide to Game Design - HP",
+        "photo": "/Data/HP HPGG02.en Certificate _ edX.jpg"
+    },
+    {
+        "name": "Java Fundamentals - EDX",
+        "photo": "/Data/GalileoX Program Certificate _ edX.jpg"
+    },
+    {
+        "name": "Advanced Programming in C++ - CISCO",
+        "photo": "/Data/TEJAGAVARA-Advanced Program-certificate.jpg"
+    },
+    {
+        "name": "Machine Learning for Soil and Crop - NPTEL",
+        "photo": "/Data/Machine Learning for Soil and Crop Management.jpg"
+    }
+    ]
+}

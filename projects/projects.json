@@ -1,0 +1,626 @@
+[
+    {
+        "id": "AgroPulse AI",
+        "url": "agropulse-ai.html",
+        "projectName": "AgroPulse AI",
+        "short_description": "An IoT and machine learning platform for real-time crop health monitoring and automated irrigation.",
+        "long_description": "AgroPulse AI integrates field sensor networks with computer vision models to give farmers actionable insights into soil moisture, nutrient levels, and pest outbreaks. By automating irrigation schedules and predicting crop yields, the platform helps reduce water waste by up to 35% while maximizing harvest quality. Designed for small-to-medium scale farms, it features an intuitive mobile dashboard and offline sync capabilities.",
+        "upload_date": "2026-09-15",
+        "last_updated": "2026-09-15",
+        "video_url": "https://youtu.be/5USuekk16e0?si=bIn519RSXUWk70vr",
+        "image_urls": [
+            "https://images.pexels.com/photos/33535698/pexels-photo-33535698.jpeg",
+            "https://images.pexels.com/photos/29652321/pexels-photo-29652321.jpeg"
+        ],
+        "tags": [
+            "IoT",
+            "Machine Learning",
+            "Agriculture",
+            "Sustainability",
+            "Python"
+        ],
+        "technologies": [
+            "Python",
+            "TensorFlow",
+            "React Native",
+            "Node.js",
+            "MQTT",
+            "AWS IoT"
+        ],
+        "members": [
+            "Jane Doe",
+            "John Smith",
+            "Alex Rivera"
+        ],
+        "sponsors": [
+            "GreenTech Foundation",
+            "AgriInnovate Fund"
+        ],
+        "project_status": "ongoing",
+        "difficulty": "Advanced",
+        "code": "lang=main.py\nimport time\nimport json\n\nclass AgroPulseSensorNode:\n    def __init__(self, node_id, threshold_moisture=30.0):\n        self.node_id = node_id\n        self.threshold_moisture = threshold_moisture\n\n    def read_soil_sensor(self):\n        return 24.5  \n\n    def evaluate_crop_health(self, moisture_level):\n        if moisture_level < self.threshold_moisture:\n            return {\n                \"status\": \"WARNING\",\n                \"message\": \"Soil moisture critically low. Irrigation triggered.\",\n                \"action_required\": True\n            }\n        return {\n            \"status\": \"OPTIMAL\",\n            \"message\": \"Soil moisture levels are within normal range.\",\n            \"action_required\": False\n        }\n\n    def run_monitoring_cycle(self):\n        moisture = self.read_soil_sensor()\n        assessment = self.evaluate_crop_health(moisture)\n        \n        telemetry_data = {\n            \"node_id\": self.node_id,\n            \"timestamp\": time.time(),\n            \"moisture_percentage\": moisture,\n            \"assessment\": assessment\n        }\n        \n        return json.dumps(telemetry_data, indent=2)\n\nif __name__ == \"__main__\":\n    node = AgroPulseSensorNode(node_id=\"NODE_A1_SOUTH_FIELD\")\n    print(\"Starting AgroPulse AI Sensor Telemetry...\")\n    print(node.run_monitoring_cycle())",
+        "button_label": "Visit Website",
+        "button_url": "https://github.com/example/agropulse-core",
+        "views": 2356,
+        "downloads": 1254
+    },
+    {
+        "id": "MedChain Ledger",
+        "url": "medchain-ledger.html",
+        "projectName": "MedChain Ledger",
+        "short_description": "Decentralized electronic health record storage securing patient history using zero-knowledge proofs.",
+        "long_description": "<div>\n        <h1><b>QR Code Generator</b></h1>\n        <p>\n            The QR Code Generator is a free and easy-to-use web tool that allows users to create QR codes for various types of content, including URLs, text, Wi-Fi credentials, contact information, SMS, emails, calls, and UPI payments. It offers advanced customization options to generate QR codes that are not only functional but also tailored to specific needs. Whether you're a business owner, developer, or individual, this tool makes QR code creation accessible and versatile.\n        </p>\n    </div><br>\n\n    <div>\n        <h3><b>Features:</b></h3><br>\n        <ul>\n            <li>Create QR codes for multiple content types, including URLs, text, Wi-Fi, contact info, SMS, email, call, and UPI payments.</li>\n            <li>Advanced customization options for size, foreground color, background color, and more.</li>\n            <li>Download your QR codes in multiple formats (PNG, SVG, etc.).</li>\n            <li>Option to add custom logos or center images to the QR code for personalization.</li>\n            <li>Responsive design, so you can generate QR codes on mobile, tablet, and desktop devices.</li>\n            <li>Fast, simple interface with no sign-ups or hidden fees\u2014completely free to use.</li>\n        </ul>\n    </div><br>\n\n    <div>\n        <h3><b>Advantages:</b></h3><br>\n        <ul>\n            <li><strong>Free and Easy to Use:</strong> No sign-up or subscription is required. Just enter the data, customize if needed, and download the QR code instantly.</li>\n            <li><strong>Customizable:</strong> Tailor the QR code\u2019s color scheme, size, and image/logo placement to match your brand or design preferences.</li>\n            <li><strong>Multi-Purpose:</strong> The tool supports various types of QR codes, making it versatile for businesses, events, personal use, and more.</li>\n            <li><strong>Fast and Reliable:</strong> The generator is fast, responsive, and works seamlessly across devices. You can generate high-quality QR codes in seconds.</li>\n            <li><strong>Secure:</strong> The QR Code Generator tool operates securely, ensuring that any information you enter is processed safely without any risks of data breaches.</li>\n        </ul>\n    </div><br>\n\n    <div>\n        <h3><b>Customization Options:</b></h3><br>\n        <p>\n            The QR Code Generator offers advanced customization features that allow you to create QR codes that fit your specific needs. Some of the key customization options include:\n        </p>\n        <ul>\n            <li><strong>Quality (px):</strong> Set the resolution for your QR code to ensure it's perfect for printing or online use.</li>\n            <li><strong>Foreground & Background Colors:</strong> Customize the foreground and background colors of your QR code to make it match your branding or design.</li>\n            <li><strong>Corner Squares & Dots:</strong> You can adjust the shape and design of the corner squares and dots of the QR code for a unique appearance.</li>\n            <li><strong>Center Image/Logo:</strong> Upload a custom logo or image to place in the center of the QR code for better branding or personalization.</li>\n            <li><strong>Advanced Layout:</strong> You can also control the size of the QR code, enabling better control over its visibility on websites, flyers, and more.</li>\n        </ul>\n    </div><br>\n\n    <div>\n        <h3><b>Free QR Code API Documentation</b></h3><br>\n        <p>\n            Dynamically generate highly customizable, interactive QR codes instantly by passing URL parameters. No API keys or authentication required.\n        </p><br>\n\n        <h4><b>How It Works:</b></h4>\n        <p>\n            Our QR API utilizes client-side rendering. By formatting an HTTP GET request to our target endpoint, the page instantly grabs your query parameters and renders a beautifully styled QR code on a transparent background.\n        </p>\n        <p><b>Base Endpoint:</b> <code>https://qrzip.vercel.app/qrgen.html?[DATA_OR_TYPE]&...</code></p><br>\n\n        <h4><b>Global Styling Parameters:</b></h4>\n        <p>Customize the visual appearance of any QR code type by appending these optional parameters to your request.</p>\n        <table border=\"1\" cellpadding=\"8\" cellspacing=\"0\">\n            <thead>\n                <tr>\n                    <th>Parameter</th>\n                    <th>Status</th>\n                    <th>Description</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr>\n                    <td><code>size</code></td>\n                    <td>Optional</td>\n                    <td>Width &amp; height in pixels (Default: 300). Example: <code>size=500</code></td>\n                </tr>\n                <tr>\n                    <td><code>fg</code></td>\n                    <td>Optional</td>\n                    <td>Foreground dot color (Hex code without '#'). Example: <code>fg=ff0000</code></td>\n                </tr>\n                <tr>\n                    <td><code>bg</code></td>\n                    <td>Optional</td>\n                    <td>Background color (Hex code without '#'). Example: <code>bg=f8f9fa</code></td>\n                </tr>\n                <tr>\n                    <td><code>style</code></td>\n                    <td>Optional</td>\n                    <td>Preset patterns: <code>default</code>, <code>dots</code>, <code>square</code>, <code>grounded</code>, <code>classy</code>, <code>classy-rounded</code>, <code>extra-rounded</code>.</td>\n                </tr>\n                <tr>\n                    <td><code>logo</code></td>\n                    <td>Optional</td>\n                    <td>URL of a center image (Must be URL encoded). Example: <code>logo=https://img.url</code></td>\n                </tr>\n            </tbody>\n        </table><br>\n    </div>",
+        "upload_date": "2026-08-10",
+        "last_updated": "2026-09-15",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg"
+        ],
+        "tags": [
+            "Blockchain",
+            "Healthcare",
+            "Security",
+            "ZK-Proofs"
+        ],
+        "technologies": [
+            "Solidity",
+            "Rust",
+            "Next.js",
+            "Ethereum"
+        ],
+        "members": [
+            "Sarah Jenkins",
+            "David Chen"
+        ],
+        "sponsors": [
+            "HealthChain Initiative"
+        ],
+        "project_status": "completed",
+        "difficulty": "Advanced",
+        "code": "pragma solidity ^0.8.0;\n\ncontract MedicalRecordRegistry {\n    mapping(address => string) private encryptedRecords;\n    event RecordUpdated(address indexed patient);\n\n    function updateRecord(string memory _hash) public {\n        encryptedRecords[msg.sender] = _hash;\n        emit RecordUpdated(msg.sender);\n    }\n}",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/medchain",
+        "views": 1540,
+        "downloads": 820
+    },
+    {
+        "id": "Nexus Finance",
+        "url": "nexus-finance.html",
+        "projectName": "Nexus Finance",
+        "short_description": "Automated algorithmic trading bot framework with multi-exchange support and real-time risk tracking.",
+        "long_description": "Nexus Finance allows retail traders to deploy custom quantitative trading algorithms across major centralized and decentralized exchanges. Features low-latency websocket execution and advanced portfolio drawdown protection filters.",
+        "upload_date": "2026-07-22",
+        "last_updated": "2026-08-14",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg"
+        ],
+        "tags": [
+            "Fintech",
+            "Trading",
+            "Algorithm",
+            "Finance"
+        ],
+        "technologies": [
+            "Python",
+            "FastAPI",
+            "PostgreSQL",
+            "Docker"
+        ],
+        "members": [
+            "Michael Chang",
+            "Elena Rostova"
+        ],
+        "sponsors": [
+            "QuantCapital"
+        ],
+        "project_status": "ongoing",
+        "difficulty": "Intermediate",
+        "code": "import asyncio\n\nasync def fetch_ticker_price(symbol):\n    print(f'Fetching live price for {symbol}...')\n    await asyncio.sleep(1)\n    return 64200.50\n\nasync def main():\n    price = await fetch_ticker_price('BTC/USD')\n    print(f'Current Price: {price}')\n\nasyncio.run(main())",
+        "button_label": "Visit Website",
+        "button_url": "https://nexusfin.example.com",
+        "views": 3102,
+        "downloads": 1420
+    },
+    {
+        "id": "EcoRoute",
+        "url": "ecoroute.html",
+        "projectName": "EcoRoute",
+        "short_description": "Carbon-optimized route navigation app for urban delivery fleets.",
+        "long_description": "EcoRoute analyzes live traffic congestion, topographical elevations, and stop-and-go patterns to map out the most fuel-efficient and eco-friendly routes for electric and hybrid delivery vehicles, slashing fleet carbon outputs by up to 22%.",
+        "upload_date": "2026-06-11",
+        "last_updated": "2026-08-30",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/2526105/pexels-photo-2526105.jpeg"
+        ],
+        "tags": [
+            "Logistics",
+            "Green Energy",
+            "Maps",
+            "Go"
+        ],
+        "technologies": [
+            "Go",
+            "Mapbox API",
+            "Vue.js",
+            "Redis"
+        ],
+        "members": [
+            "Liam O'Connor",
+            "Priya Sharma"
+        ],
+        "sponsors": [
+            "Urban Green Grant"
+        ],
+        "project_status": "completed",
+        "difficulty": "Intermediate",
+        "code": "package main\n\nimport \"fmt\"\n\nfunc calculateEcoScore(distanceKm float64, idleTimeMins int) float64 {\n    return (distanceKm * 0.12) + (float64(idleTimeMins) * 0.05)\n}\n\nfunc main() {\n    fmt.Printf(\"Route Carbon Score: %.2f kg CO2\\n\", calculateEcoScore(45.2, 12))\n}",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/ecoroute",
+        "views": 980,
+        "downloads": 412
+    },
+    {
+        "id": "DevPulse",
+        "url": "devpulse.html",
+        "projectName": "DevPulse",
+        "short_description": "An open-source developer productivity analytics and burnout prevention dashboard.",
+        "long_description": "DevPulse hooks into popular Git hosting providers and project management trackers to analyze team workflow throughput, PR review cycles, and after-hours coding habits, helping engineering leaders foster healthier work environments.",
+        "upload_date": "2026-05-04",
+        "last_updated": "2026-08-20",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg"
+        ],
+        "tags": [
+            "Developer Tools",
+            "Analytics",
+            "Productivity"
+        ],
+        "technologies": [
+            "TypeScript",
+            "React",
+            "GraphQL",
+            "TailwindCSS"
+        ],
+        "members": [
+            "Tom Hanks",
+            "Lisa Kudrow"
+        ],
+        "sponsors": [
+            "DevEx Guild"
+        ],
+        "project_status": "ongoing",
+        "difficulty": "Beginner",
+        "code": "import { useState } from 'react';\n\nexport function BurnoutMeter({ commitCount }: { commitCount: number }) {\n  const status = commitCount > 40 ? 'High Risk' : 'Healthy';\n  return <div className={`badge ${status}`}>{status}</div>;\n}",
+        "button_label": "Visit Website",
+        "button_url": "https://devpulse.example.com",
+        "views": 4120,
+        "downloads": 2300
+    },
+    {
+        "id": "CyberShield AI",
+        "url": "cybershield-ai.html",
+        "projectName": "CyberShield AI",
+        "short_description": "Autonomous threat detection agent scanning cloud infrastructure logs for zero-day exploits.",
+        "long_description": "CyberShield AI uses unsupervised clustering models to flag anomalous inbound network traffic vectors in real-time, instantly isolating compromised cloud workloads before lateral movement can occur.",
+        "upload_date": "2026-04-18",
+        "last_updated": "2026-09-10",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
+        ],
+        "tags": [
+            "Cybersecurity",
+            "AI",
+            "Cloud",
+            "DevSecOps"
+        ],
+        "technologies": [
+            "Python",
+            "PyTorch",
+            "Kubernetes",
+            "Kafka"
+        ],
+        "members": [
+            "Marcus Vance",
+            "Aisha Bello"
+        ],
+        "sponsors": [
+            "SecureCloud Corp"
+        ],
+        "project_status": "ongoing",
+        "difficulty": "Advanced",
+        "code": "import numpy as np\n\nclass AnomalyDetector:\n    def __init__(self, threshold=2.5):\n        self.threshold = threshold\n\n    def evaluate_traffic(self, packet_sizes):\n        mean = np.mean(packet_sizes)\n        std = np.std(packet_sizes)\n        z_scores = (packet_sizes - mean) / (std + 1e-8)\n        return np.where(np.abs(z_scores) > self.threshold, 1, 0)",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/cybershield",
+        "views": 2750,
+        "downloads": 940
+    },
+    {
+        "id": "OmniVoice",
+        "url": "omnivoice.html",
+        "projectName": "OmniVoice",
+        "short_description": "Real-time multilingual voice translation and accent neutralization browser plugin.",
+        "long_description": "OmniVoice processes audio streams on-the-fly during video conferences, translating speech into 40+ languages while neutralizing accents to ensure absolute clarity across global distributed teams.",
+        "upload_date": "2026-03-12",
+        "last_updated": "2026-08-05",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg"
+        ],
+        "tags": [
+            "Audio",
+            "Machine Learning",
+            "WebRTC",
+            "Translation"
+        ],
+        "technologies": [
+            "WebAssembly",
+            "C++",
+            "JavaScript",
+            "WebSockets"
+        ],
+        "members": [
+            "Kenji Sato",
+            "Maria Garcia"
+        ],
+        "sponsors": [
+            "GlobalComms LLC"
+        ],
+        "project_status": "completed",
+        "difficulty": "Advanced",
+        "code": "navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {\n  console.log('Audio stream captured for translation pipeline.');\n});",
+        "button_label": "Visit Website",
+        "button_url": "https://omnivoice.example.com",
+        "views": 5120,
+        "downloads": 3100
+    },
+    {
+        "id": "SmartGrid Home",
+        "url": "smartgrid-home.html",
+        "projectName": "SmartGrid Home",
+        "short_description": "Open-source home energy management dashboard optimizing solar storage and EV charging.",
+        "long_description": "SmartGrid Home coordinates heavy home electrical loads (such as electric vehicle chargers and heat pumps) to run primarily during peak solar generation hours or dynamic off-peak energy pricing intervals.",
+        "upload_date": "2026-02-19",
+        "last_updated": "2026-07-15",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/4254145/pexels-photo-4254145.jpeg"
+        ],
+        "tags": [
+            "Smart Home",
+            "Energy",
+            "IoT",
+            "Sustainability"
+        ],
+        "technologies": [
+            "HomeAssistant",
+            "Python",
+            "MQTT",
+            "React"
+        ],
+        "members": [
+            "Chris Evans",
+            "Scarlett Johansson"
+        ],
+        "sponsors": [
+            "EcoPower Init"
+        ],
+        "project_status": "on hold",
+        "difficulty": "Beginner",
+        "code": "def optimize_ev_charging(battery_level, current_price):\n    if battery_level < 80 and current_price < 0.15:\n        return \"START_CHARGING\"\n    return \"HOLD\"",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/smartgrid",
+        "views": 1830,
+        "downloads": 750
+    },
+    {
+        "id": "EduVerse",
+        "url": "eduverse.html",
+        "projectName": "EduVerse",
+        "short_description": "Collaborative virtual reality physics laboratory simulator for remote high school students.",
+        "long_description": "EduVerse lets students interact with simulated gravitational fields, electromagnetic circuits, and fluid dynamics experiments in a shared spatial computing web environment without needing expensive laboratory equipment.",
+        "upload_date": "2026-01-30",
+        "last_updated": "2026-06-28",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/8422201/pexels-photo-8422201.jpeg"
+        ],
+        "tags": [
+            "EdTech",
+            "VR",
+            "Simulation",
+            "Three.js"
+        ],
+        "technologies": [
+            "Three.js",
+            "WebXR",
+            "Node.js",
+            "Socket.io"
+        ],
+        "members": [
+            "Robert Downey",
+            "Mark Ruffalo"
+        ],
+        "sponsors": [
+            "FutureEdu Foundation"
+        ],
+        "project_status": "completed",
+        "difficulty": "Intermediate",
+        "code": "import * as THREE from 'three';\n\nconst scene = new THREE.Scene();\nconst camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);\nconsole.log('Virtual Lab initialized.');",
+        "button_label": "Visit Website",
+        "button_url": "https://eduverse.example.com",
+        "views": 2490,
+        "downloads": 1120
+    },
+    {
+        "id": "FitPulse AI",
+        "url": "fitpulse-ai.html",
+        "projectName": "FitPulse AI",
+        "short_description": "Computer vision personal trainer tracking rep counts, form accuracy, and joint alignment.",
+        "long_description": "Using device webcams or mobile cameras, FitPulse AI maps human pose landmarks to correct workout form in real time, preventing injuries and ensuring optimal muscle engagement during weight training.",
+        "upload_date": "2025-12-14",
+        "last_updated": "2026-05-12",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg"
+        ],
+        "tags": [
+            "Fitness",
+            "Computer Vision",
+            "Health",
+            "MediaPipe"
+        ],
+        "technologies": [
+            "TensorFlow.js",
+            "React",
+            "TailwindCSS"
+        ],
+        "members": [
+            "Chris Hemsworth",
+            "Brie Larson"
+        ],
+        "sponsors": [
+            "ActiveLife Inc"
+        ],
+        "project_status": "ongoing",
+        "difficulty": "Intermediate",
+        "code": "function checkSquatForm(hipY, kneeY) {\n  if (kneeY > hipY) {\n    return 'Good depth! Push up.';\n  }\n  return 'Go lower!';\n}",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/fitpulse",
+        "views": 3940,
+        "downloads": 1890
+    },
+    {
+        "id": "LogiRoute",
+        "url": "logiroute.html",
+        "projectName": "LogiRoute",
+        "short_description": "AI-powered warehouse inventory management and automated forklift routing engine.",
+        "long_description": "LogiRoute minimizes item retrieval times across fulfillment warehouses by dynamically batching picking orders and routing autonomous robotic stock handlers along optimal collision-free grid tracks.",
+        "upload_date": "2025-11-05",
+        "last_updated": "2026-04-02",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg"
+        ],
+        "tags": [
+            "Robotics",
+            "Logistics",
+            "AI",
+            "Optimization"
+        ],
+        "technologies": [
+            "C++",
+            "ROS2",
+            "Python",
+            "Qt"
+        ],
+        "members": [
+            "Jeremy Renner",
+            "Tom Holland"
+        ],
+        "sponsors": [
+            "SupplyChain Pro"
+        ],
+        "project_status": "completed",
+        "difficulty": "Advanced",
+        "code": "#include <iostream>\n\nint main() {\n    std::cout << \"Robot path planning initialized...\" << std::endl;\n    return 0;\n}",
+        "button_label": "Visit Website",
+        "button_url": "https://logiroute.example.com",
+        "views": 1620,
+        "downloads": 530
+    },
+    {
+        "id": "ChefGPT",
+        "url": "chefgpt.html",
+        "projectName": "ChefGPT",
+        "short_description": "Pantry-to-plate recipe generator minimizing household food waste with AI substitution logic.",
+        "long_description": "ChefGPT scans photographs of refrigerator contents and pantry cupboards, instantly offering gourmet recipe alternatives tailored to dietary restrictions and minimizing ingredients that are about to spoil.",
+        "upload_date": "2025-10-20",
+        "last_updated": "2026-03-15",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+        ],
+        "tags": [
+            "Food",
+            "AI",
+            "Sustainability",
+            "Mobile"
+        ],
+        "technologies": [
+            "Flutter",
+            "OpenAI API",
+            "Firebase"
+        ],
+        "members": [
+            "Zendaya Coleman",
+            "Timothee Chalamet"
+        ],
+        "sponsors": [
+            "Culinary Arts Fund"
+        ],
+        "project_status": "ongoing",
+        "difficulty": "Beginner",
+        "code": "import 'package:flutter/material.dart';\n\nvoid main() {\n  runApp(MaterialApp(home: Scaffold(body: Text('ChefGPT Ready'))));\n}",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/chefgpt",
+        "views": 6120,
+        "downloads": 4020
+    },
+    {
+        "id": "AeroStream",
+        "url": "aerostream.html",
+        "projectName": "AeroStream",
+        "short_description": "Real-time meteorological wind shear prediction tool for commercial drone operations.",
+        "long_description": "AeroStream aggregates Doppler radar feeds and ground weather station telemetry to calculate safe flight corridors and automated landing envelopes for delivery drone fleets in metropolitan wind tunnels.",
+        "upload_date": "2025-09-09",
+        "last_updated": "2026-02-11",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/724921/pexels-photo-724921.jpeg"
+        ],
+        "tags": [
+            "Aviation",
+            "Weather",
+            "Data Science"
+        ],
+        "technologies": [
+            "Python",
+            "Pandas",
+            "Plotly",
+            "Flask"
+        ],
+        "members": [
+            "Benedict Cumberbatch",
+            "Paul Bettany"
+        ],
+        "sponsors": [
+            "SkyTech Labs"
+        ],
+        "project_status": "on hold",
+        "difficulty": "Advanced",
+        "code": "import pandas as pd\n\ndef analyze_wind_shear(wind_speeds):\n    return pd.Series(wind_speeds).rolling(window=3).mean()",
+        "button_label": "Visit Website",
+        "button_url": "https://aerostream.example.com",
+        "views": 1410,
+        "downloads": 320
+    },
+    {
+        "id": "NexusMusic",
+        "url": "nexusmusic.html",
+        "projectName": "NexusMusic",
+        "short_description": "Browser-based collaborative DAW with real-time multi-track MIDI jamming capabilities.",
+        "long_description": "NexusMusic empowers musicians worldwide to compose, mix, and master audio tracks together simultaneously inside a web browser, leveraging low-latency WebRTC audio routing and cloud effects plugins.",
+        "upload_date": "2025-08-01",
+        "last_updated": "2026-01-18",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg"
+        ],
+        "tags": [
+            "Music",
+            "Audio",
+            "Collaboration"
+        ],
+        "technologies": [
+            "Web Audio API",
+            "React",
+            "WebSockets",
+            "Node.js"
+        ],
+        "members": [
+            "Florence Pugh",
+            "Harry Styles"
+        ],
+        "sponsors": [
+            "SoundCloud Grant"
+        ],
+        "project_status": "completed",
+        "difficulty": "Intermediate",
+        "code": "const audioCtx = new (window.AudioContext || window.webkitAudioContext)();\nconst oscillator = audioCtx.createOscillator();\noscillator.type = 'sine';\noscillator.frequency.setValueAtTime(440, audioCtx.currentTime);\noscillator.connect(audioCtx.destination);",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/nexusmusic",
+        "views": 3310,
+        "downloads": 1590
+    },
+    {
+        "id": "SolarGuard",
+        "url": "solarguard.html",
+        "projectName": "SolarGuard",
+        "short_description": "Thermal drone imaging analyzer for detecting microscopic photovoltaic cell faults.",
+        "long_description": "SolarGuard automates the inspection of large-scale solar farms by processing infrared aerial drone imagery through computer vision pipelines to pinpoint hot spots, micro-cracks, and failing inverter strings.",
+        "upload_date": "2025-07-12",
+        "last_updated": "2025-12-01",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg"
+        ],
+        "tags": [
+            "Solar",
+            "Computer Vision",
+            "Energy",
+            "Drones"
+        ],
+        "technologies": [
+            "Python",
+            "OpenCV",
+            "PyTorch",
+            "Streamlit"
+        ],
+        "members": [
+            "Simu Liu",
+            "Awkwafina"
+        ],
+        "sponsors": [
+            "SolarEdge Inc"
+        ],
+        "project_status": "completed",
+        "difficulty": "Advanced",
+        "code": "import cv2\n\ndef detect_hotspots(image_path):\n    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\n    _, thresh = cv2.threshold(img, 220, 255, cv2.THRESH_BINARY)\n    return cv2.countNonZero(thresh)",
+        "button_label": "Visit Website",
+        "button_url": "https://solarguard.example.com",
+        "views": 2190,
+        "downloads": 880
+    },
+    {
+        "id": "UrbanGarden Hub",
+        "url": "urbangarden-hub.html",
+        "projectName": "UrbanGarden Hub",
+        "short_description": "Community-driven platform connecting urban growers for seed swapping and rooftop gardening guides.",
+        "long_description": "UrbanGarden Hub helps city dwellers maximize micro-spaces like balconies and windowsills for sustainable vegetable cultivation, featuring regional planting calendars and community seed exchange coordination.",
+        "upload_date": "2025-06-05",
+        "last_updated": "2025-11-20",
+        "video_url": "https://youtu.be/dQw4w9WgXcQ",
+        "image_urls": [
+            "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg"
+        ],
+        "tags": [
+            "Community",
+            "Gardening",
+            "Sustainability"
+        ],
+        "technologies": [
+            "Vue.js",
+            "Express",
+            "MongoDB",
+            "Node.js"
+        ],
+        "members": [
+            "Florence Pugh",
+            "Timothee Chalamet"
+        ],
+        "sponsors": [
+            "CityRoots Foundation"
+        ],
+        "project_status": "ongoing",
+        "difficulty": "Beginner",
+        "code": "const plantingGuide = {\n  tomato: \"Plant in spring after last frost.\",\n  basil: \"Requires full sun and moist soil.\"\n};\nconsole.log(plantingGuide.tomato);",
+        "button_label": "Download",
+        "button_url": "https://github.com/example/urbangarden",
+        "views": 1840,
+        "downloads": 670
+    }
+]

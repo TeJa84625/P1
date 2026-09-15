@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>About Teja Gavara</title>
+    
+    <meta name="description"
+        content="Teja Gavara's portfolio showcasing his expertise in Application Development, AI, IoT, Robotics, and Game Design projects.">
+    <meta name="author" content="Teja Gavara">
+    
+    <meta property="og:title" content="Teja Gavara | Portfolio">
+    <meta property="og:description"
+        content="Explore Teja Gavara's portfolio: App development, AI, IoT, and game design projects.">
+    <meta property="og:image" content="https://tejagavara.vercel.app/images/profile11.png">
+    <meta property="og:url" content="https://tejagavara.vercel.app">
+    
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="/images/favicon.ico?v=2" />
+    <link rel="stylesheet" href="output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #image-modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        #modal-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        model-viewer::part(default-progress-bar) {
+            display: none;
+        }
+        
+        #mobile-menu {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            max-height: calc(100vh - 64px);
+            overflow-y: auto;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 0.5rem 0.5rem;
+            padding: 1rem;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+        #mobile-menu {
+            background-color: #1F2937;
+            color: #f9f9f9;
+        }
+        
+        #mobile-menu a {
+            color: #f9f9f9;
+        }
+        
+        #mobile-menu a:hover {
+            color: #4A90E2;
+        }
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-black">
+    <header
+        class="bg-white shadow-md py-4 px-6 md:px-10 lg:px-16 flex justify-between items-center rounded-b-lg sticky top-0 z-50 dark:bg-gray-800 dark:text-white">
+        <div class="flex items-center">
+            <a href="index.html"
+                class="text-2xl font-bold text-gray-800 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition duration-300 ease-in-out">
+                <span class="text-blue-600">G</span>TEJA
+            </a>
+        </div>
+    
+        <button id="menu-btn" class="md:hidden text-gray-700 dark:text-white focus:outline-none" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    
+        <nav id="menu" class="hidden md:flex">
+            <ul class="flex flex-col md:flex-row md:space-x-8">
+                <li><a href="index.html"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Home</a>
+                </li>
+                <li><a href="projects.html"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Projects</a>
+                </li>
+                <li><a href="#"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">About</a>
+                </li>
+                <li><a href="contact.html"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav id="mobile-menu" class="hidden bg-white shadow-md rounded-b-lg md:hidden px-6 py-4 dark:bg-gray-900">
+            <ul class="flex flex-col space-y-3">
+                <li><a href="index.html"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Home</a>
+                </li>
+                <li><a href="projects.html"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Projects</a>
+                </li>
+                <li><a href="#"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">About</a>
+                </li>
+                <li><a href="contact.html"
+                        class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="flex-grow p-6 md:p-10 lg:p-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 text-center dark:text-white">About <span
+                class="text-blue-600">Me</span></h1>
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-6xl mx-auto dark:bg-gray-800 dark:text-black">
+            <div class="flex flex-col lg:flex-row items-start gap-10">
+                <div class="flex-shrink-0 mx-auto mb-6 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm lg:mb-0">
+                    <img id="profile-photo" src="images/profile11.png" alt="Profile Photo"
+                        class="w-full h-auto object-cover rounded-lg shadow-md" />
+                </div>
+
+                <div class="flex-1">
+                <p class="text-lg leading-relaxed dark:text-white">
+                    A driven developer holding a B.Tech in Information Technology with a strong academic 
+                    background and a passion for turning innovative ideas into practical solutions.
+                </p>
+                <p class="text-lg leading-relaxed mt-4 dark:text-white">
+                    Core technical competencies lie in <strong>Application Development, Database Management</strong>, 
+                    and emerging fields like <strong>IoT, AI, and Game Design</strong>. Hands-on experience includes 
+                    building advanced engineering projects like an <em>Automatic Cooking Machine</em> and a 
+                    <em>6 DOF Robotic Hand</em> using a seamless blend of software and hardware integration.
+                </p>
+                <p class="text-lg leading-relaxed mt-4 dark:text-white">
+                    Technical expertise is backed by industry-standard certifications from <strong>NPTEL, CISCO, edX, and AWS (Amazon Web Services)</strong>. This foundational knowledge in cloud architecture, network fundamentals, and advanced computing reflects a continuous commitment to growth and modern technical innovation.
+                </p>
+            </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <h2 class="text-2xl font-bold mb-4 dark:text-white">My Skills</h2>
+                <div id="skillloading" class="">loading...</div>
+                <div id="skills-container" class="flex flex-wrap justify-center gap-3"></div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <h2 class="text-2xl font-bold mb-4 dark:text-white">Certifications</h2>
+                <div id="certsloading" class="">loading...</div>
+                <div id="certs-container" class="flex flex-wrap justify-center gap-3"></div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a id="resumeLink"
+                    class="hidden inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-700 transition duration-300">
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto rounded-t-lg">
+        <p>&copy; <span id="year"></span> G TEJA. All rights reserved.</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-70 flex justify-center items-center px-1">
+        <span class="absolute top-2 right-4 text-white text-2xl cursor-pointer" onclick="closeModal()">&times;</span>
+        <div class="p-4 rounded-lg w-full sm:w-[90%] md:w-[80%] lg:w-[55%] max-h-[90vh] overflow-auto relative box-border">
+            <img id="modal-img" src="" alt="Certificate Image" class="w-full h-auto object-contain" />
+        </div>
+    </div>
+
+    <script>
+        const profilePhotoElement = document.getElementById("profile-photo");
+        const skillsContainer = document.getElementById("skills-container");
+        const certsContainer = document.getElementById("certs-container");
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+
+            modalImg.style.display = 'none';
+            modalImg.src = '';
+            modal.style.display = "flex";
+
+            const loadingDiv = document.createElement("div");
+            loadingDiv.id = "modal-loading";
+            loadingDiv.className = "text-xl text-white text-center p-8";
+            loadingDiv.innerText = "Loading Certification...";
+
+            const modalContent = modal.querySelector('div');
+            modalContent.prepend(loadingDiv);
+
+            modalImg.onload = function () {
+                loadingDiv.remove();
+                modalImg.style.display = 'block';
+            };
+
+            modalImg.onerror = function () {
+                loadingDiv.innerText = "Failed to load image.";
+                modalImg.style.display = 'block';
+            };
+
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            const loadingDiv = document.getElementById("modal-loading");
+            if (loadingDiv) {
+                loadingDiv.remove();
+            }
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById("image-modal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        async function fetchPortfolioData() {
+            try {
+                const response = await fetch('/info.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                if (data.profile) {
+                    profilePhotoElement.src = data.profile;
+                }
+
+                if (data.resume) {
+                    const resumeLink = document.getElementById('resumeLink');
+                    resumeLink.href = data.resume;
+                    resumeLink.target = "_blank";
+                    resumeLink.setAttribute('download', '');
+                    resumeLink.textContent = "My Resume";
+                    document.getElementById('resumeLink').classList.remove('hidden');
+                } else {
+                    document.getElementById('resumeLink').classList.add('hidden');
+                }
+
+                skillsContainer.innerHTML = "";
+                document.getElementById('skillloading').classList.add('hidden');
+                if (data.skills) {
+                    const skillArray = data.skills.split(',').map(s => s.trim());
+                    skillArray.forEach(skill => {
+                        const span = document.createElement("span");
+                        span.className = "bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full dark:text-gray-900";
+                        span.innerText = skill;
+                        skillsContainer.appendChild(span);
+                    });
+                }
+
+                certsContainer.innerHTML = "";
+                document.getElementById('certsloading').classList.add('hidden');
+                if (data.certifications && Array.isArray(data.certifications)) {
+                    data.certifications.forEach(cert => {
+                        const certDiv = document.createElement("div");
+                        certDiv.className = "bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full cursor-pointer dark:text-gray-900";
+                        certDiv.innerText = cert.name;
+
+                        certDiv.addEventListener('click', function () {
+                            openModal(cert.photo);
+                        });
+                        certsContainer.appendChild(certDiv);
+                    });
+                }
+            } catch (error) {
+                console.error("Error fetching portfolio data from /info.json:", error);
+                document.getElementById('skillloading').innerText = "Failed to load skills.";
+                document.getElementById('certsloading').innerText = "Failed to load certifications.";
+            }
+        }
+
+        fetchPortfolioData();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J'].includes(e.key.toUpperCase()))) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

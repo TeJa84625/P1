@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projects Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 font-sans">
+    <div id="appContainer" class="max-w-4xl mx-auto p-5">
+        <div class="flex justify-between items-center mb-6">
+            <h1 id="pageTitle" class="text-4xl text-blue-700 font-bold">Add New Project</h1>
+            <a href="/projects.html" target="_blank"
+                class="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-colors">
+                View Live Site
+            </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center mb-6 gap-4">
+            <button id="addNewProjectButton"
+                class="bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg transition-colors">
+                Add New Project
+            </button>
+            <button id="updateExistingProjectButton"
+                class="bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg transition-colors">
+                Update Existing Project
+            </button>
+        </div>
+
+        <div id="projectListContainer" class="bg-white p-8 rounded-lg shadow-md mb-6 hidden">
+            <h3 class="text-2xl font-semibold mb-4">Existing Projects</h3>
+            <div id="projectList" class="flex flex-wrap gap-2 max-h-48 overflow-y-auto p-1"></div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <form id="projectForm" class="space-y-6">
+                <div>
+                    <label for="projectName" class="block text-lg font-semibold mb-2">Project Name:</label>
+                    <input type="text" id="projectName" placeholder="e.g., My Awesome Project" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="shortDescription" class="block text-lg font-semibold mb-2">Short Description:</label>
+                    <textarea id="shortDescription" rows="3" placeholder="A brief, one-sentence summary."
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md"></textarea>
+                </div>
+                <div>
+                    <label for="longDescription" class="block text-lg font-semibold mb-2">Long Description:</label>
+                    <textarea id="longDescription" rows="6" placeholder="A detailed description of the project."
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md"></textarea>
+                </div>
+
+                <!-- Image URLs (Full-width block input layout) -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">Image URLs:</label>
+                    <div id="imageUrlsContainer" class="space-y-2 mb-2"></div>
+                    <button type="button" id="addImageUrlBtn"
+                        class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-2">Add Image
+                        URL</button>
+                </div>
+
+                <div>
+                    <label for="videoUrl" class="block text-lg font-semibold mb-2">Video URL:</label>
+                    <input type="url" id="videoUrl" placeholder="e.g., https://www.youtube.com/watch?v=..."
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                </div>
+
+                <!-- Tags (Dynamic Badge Layout) -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">Tags:</label>
+                    <div id="tagsContainer" class="flex flex-wrap gap-2.5 mb-3"></div>
+                    <div class="flex gap-2">
+                        <input type="text" id="csvTags" placeholder="Paste CSV (e.g. Tag1, Tag2)"
+                            class="flex-grow px-4 py-2 border border-gray-300 rounded-md">
+                        <button type="button" id="addCsvTagsBtn"
+                            class="bg-purple-600 hover:bg-purple-800 text-white px-4 py-2 rounded-md">Add CSV</button>
+                        <button type="button" id="addTagBtn"
+                            class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Add Single</button>
+                    </div>
+                </div>
+
+                <!-- Technologies (Dynamic Badge Layout) -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">Technologies:</label>
+                    <div id="technologiesContainer" class="flex flex-wrap gap-2.5 mb-3"></div>
+                    <div class="flex gap-2">
+                        <input type="text" id="csvTechnologies" placeholder="Paste CSV (e.g. Python, Flask, HTML)"
+                            class="flex-grow px-4 py-2 border border-gray-300 rounded-md">
+                        <button type="button" id="addCsvTechnologiesBtn"
+                            class="bg-purple-600 hover:bg-purple-800 text-white px-4 py-2 rounded-md">Add CSV</button>
+                        <button type="button" id="addTechnologyBtn"
+                            class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Add Single</button>
+                    </div>
+                </div>
+
+                <!-- Members (Dynamic Badge Layout) -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">Members:</label>
+                    <div id="membersContainer" class="flex flex-wrap gap-2.5 mb-3"></div>
+                    <div class="flex gap-2">
+                        <input type="text" id="csvMembers" placeholder="Paste CSV (e.g. John Doe, Jane Smith)"
+                            class="flex-grow px-4 py-2 border border-gray-300 rounded-md">
+                        <button type="button" id="addCsvMembersBtn"
+                            class="bg-purple-600 hover:bg-purple-800 text-white px-4 py-2 rounded-md">Add CSV</button>
+                        <button type="button" id="addMemberBtn"
+                            class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Add Single</button>
+                    </div>
+                </div>
+
+                <!-- Sponsors (Dynamic Badge Layout) -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">Sponsors:</label>
+                    <div id="sponsorsContainer" class="flex flex-wrap gap-2.5 mb-3"></div>
+                    <div class="flex gap-2">
+                        <input type="text" id="csvSponsors" placeholder="Paste CSV (e.g. Google, Microsoft)"
+                            class="flex-grow px-4 py-2 border border-gray-300 rounded-md">
+                        <button type="button" id="addCsvSponsorsBtn"
+                            class="bg-purple-600 hover:bg-purple-800 text-white px-4 py-2 rounded-md">Add CSV</button>
+                        <button type="button" id="addSponsorBtn"
+                            class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Add Single</button>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="projectStatus" class="block text-lg font-semibold mb-2">Project Status:</label>
+                    <select id="projectStatus" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        <option value="ongoing">Ongoing</option>
+                        <option value="completed">Completed</option>
+                        <option value="onhold">On Hold</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="difficulty" class="block text-lg font-semibold mb-2">Difficulty:</label>
+                    <select id="difficulty" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="code" class="block text-lg font-semibold mb-2">Code:</label>
+                    <textarea id="code" rows="6" placeholder="Paste your complete code here..."
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md"></textarea>
+                </div>
+                <div>
+                    <label for="buttonLabel" class="block text-lg font-semibold mb-2">Button Label:</label>
+                    <select id="buttonLabel" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        <option value="None">None</option>
+                        <option value="Download">Download</option>
+                        <option value="Visit Website">Visit Website</option>
+                    </select>
+                </div>
+                <div id="buttonUrlGroup" class="hidden">
+                    <label for="buttonUrl" class="block text-lg font-semibold mb-2">Button URL:</label>
+                    <input type="url" id="buttonUrl" placeholder="e.g., https://www.example.com"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="uploadDate" class="block text-lg font-semibold mb-2">Upload Date:</label>
+                    <input type="date" id="uploadDate" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="lastUpdated" class="block text-lg font-semibold mb-2">Last Updated:</label>
+                    <input type="date" id="lastUpdated" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="views" class="block text-lg font-semibold mb-2">Views:</label>
+                    <input type="number" id="views" value="0"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                </div>
+                <div id="downloadsGroup" class="hidden">
+                    <label for="downloads" class="block text-lg font-semibold mb-2">Downloads:</label>
+                    <input type="number" id="downloads" value="0"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                </div>
+
+                <div class="flex items-center gap-4 mt-6">
+                    <button type="submit" id="submitButton"
+                        class="w-full bg-green-500 hover:bg-green-700 text-white px-6 py-3 rounded-md text-xl transition-colors">
+                        Save Project
+                    </button>
+                    <button type="button" id="deleteProjectButton"
+                        class="bg-red-500 hover:bg-red-700 text-white px-6 py-3 rounded-md text-xl hidden transition-colors">
+                        Delete
+                    </button>
+                </div>
+            </form>
+            <p id="statusMessage" class="mt-6 text-center font-semibold"></p>
+        </div>
+    </div>
+
+    <script>
+        const projectForm = document.getElementById('projectForm');
+        const projectNameInput = document.getElementById('projectName');
+        const submitButton = document.getElementById('submitButton');
+        const addNewProjectButton = document.getElementById('addNewProjectButton');
+        const updateExistingProjectButton = document.getElementById('updateExistingProjectButton');
+        const deleteProjectButton = document.getElementById('deleteProjectButton');
+        const projectListContainer = document.getElementById('projectListContainer');
+        const projectList = document.getElementById('projectList');
+        const buttonLabelSelect = document.getElementById('buttonLabel');
+        const buttonUrlGroup = document.getElementById('buttonUrlGroup');
+        const downloadsGroup = document.getElementById('downloadsGroup');
+        const downloadsInput = document.getElementById('downloads');
+        const viewsInput = document.getElementById('views');
+        const pageTitle = document.getElementById('pageTitle');
+        const statusMessage = document.getElementById('statusMessage');
+
+        let currentMode = 'add';
+        let currentEditingId = null;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setMode('add');
+            lucide.createIcons();
+        });
+
+        // Dedicated full-width block layout specifically for Image URLs
+        function createImageInput(container, value = '', placeholder = 'Image URL') {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'flex items-center gap-2 entry-wrapper mb-2';
+            wrapper.innerHTML = `
+                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md text-sm" placeholder="${placeholder}" value="${value}" required>
+                <button type="button" class="bg-red-500 hover:bg-red-700 text-white px-3 py-2 rounded-md text-sm remove-btn">Remove</button>
+            `;
+            container.appendChild(wrapper);
+            wrapper.querySelector('.remove-btn').addEventListener('click', () => wrapper.remove());
+        }
+
+        // Enhanced Badge Pill layout with dynamic content size for Tags, Tech, Members, Sponsors
+        function createDynamicInput(container, value = '', placeholder = 'Add entry') {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'bg-white border border-slate-300 shadow-sm text-slate-800 text-sm font-medium px-3.5 py-2 rounded-xl flex items-center gap-2.5 entry-wrapper transition-all focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500';
+            wrapper.innerHTML = `
+                <input type="text" class="bg-transparent focus:outline-none text-sm w-auto min-w-[80px] text-slate-800" placeholder="${placeholder}" value="${value}" style="field-sizing: content;" required>
+                <button type="button" class="text-slate-400 hover:text-red-500 transition p-0.5 remove-btn" aria-label="Remove item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" class="lucide lucide-x w-3.5 h-3.5"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            `;
+            container.appendChild(wrapper);
+            wrapper.querySelector('.remove-btn').addEventListener('click', () => wrapper.remove());
+            lucide.createIcons();
+        }
+
+        function getDynamicValues(container) {
+            const values = [];
+            container.querySelectorAll('input[type="text"]').forEach(input => {
+                const val = input.value.trim();
+                if (val) values.push(val);
+            });
+            return values;
+        }
+
+        function processCSVInput(inputId, containerElement, placeholderText) {
+            const inputField = document.getElementById(inputId);
+            const values = inputField.value.split(',');
+            values.forEach(val => {
+                const trimmed = val.trim();
+                if (trimmed) createDynamicInput(containerElement, trimmed, placeholderText);
+            });
+            inputField.value = '';
+        }
+
+        function toggleFieldVisibility() {
+            if (buttonLabelSelect.value === 'None') {
+                buttonUrlGroup.classList.add('hidden');
+                document.getElementById('buttonUrl').value = '';
+                downloadsGroup.classList.add('hidden');
+                downloadsInput.value = '0';
+            } else {
+                let label = buttonLabelSelect.value === 'Visit Website' ? "Website Visits:" : "Downloads:";
+                buttonUrlGroup.classList.remove('hidden');
+                downloadsGroup.classList.remove('hidden');
+                document.querySelector('label[for="downloads"]').textContent = label;
+            }
+        }
+
+        async function setMode(mode) {
+            currentMode = mode;
+            if (mode === 'add') {
+                currentEditingId = null;
+                pageTitle.textContent = 'Add New Project';
+                submitButton.textContent = 'Save & Automate SEO Files';
+                projectNameInput.readOnly = false;
+                projectForm.reset();
+                document.getElementById('imageUrlsContainer').innerHTML = '';
+                document.getElementById('tagsContainer').innerHTML = '';
+                document.getElementById('technologiesContainer').innerHTML = '';
+                document.getElementById('membersContainer').innerHTML = '';
+                document.getElementById('sponsorsContainer').innerHTML = '';
+                deleteProjectButton.classList.add('hidden');
+                projectListContainer.classList.add('hidden');
+
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('uploadDate').value = today;
+                document.getElementById('lastUpdated').value = today;
+                toggleFieldVisibility();
+            } else {
+                pageTitle.textContent = 'Update Existing Project';
+                submitButton.textContent = 'Update & Automate SEO Files';
+                projectNameInput.readOnly = true;
+                projectForm.reset();
+                document.getElementById('imageUrlsContainer').innerHTML = '';
+                document.getElementById('tagsContainer').innerHTML = '';
+                document.getElementById('technologiesContainer').innerHTML = '';
+                document.getElementById('membersContainer').innerHTML = '';
+                document.getElementById('sponsorsContainer').innerHTML = '';
+                deleteProjectButton.classList.remove('hidden');
+                projectListContainer.classList.remove('hidden');
+                await fetchAndDisplayProjectNames();
+                toggleFieldVisibility();
+            }
+        }
+
+        async function fetchAndDisplayProjectNames() {
+            projectList.innerHTML = '<span class="text-gray-500 text-xs p-2">Loading projects...</span>';
+            try {
+                const response = await fetch(`/api/projects?t=${Date.now()}`);
+                const projects = await response.json();
+
+                if (!projects || projects.length === 0) {
+                    projectList.innerHTML = '<span class="text-gray-500 text-xs p-2">No projects found.</span>';
+                    return;
+                }
+
+                projectList.innerHTML = '';
+                projects.forEach(proj => {
+                    const div = document.createElement('div');
+                    div.className = 'bg-white border border-slate-200 shadow-sm text-slate-700 text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-2 cursor-pointer hover:border-blue-500 hover:text-blue-600 transition';
+                    div.textContent = proj.projectName || proj.id;
+                    div.dataset.projectId = proj.id;
+
+                    div.addEventListener('click', () => {
+                        const projectId = div.dataset.projectId;
+                        if (projectId) loadProjectData(projectId);
+                    });
+
+                    projectList.appendChild(div);
+                });
+            } catch (e) {
+                projectList.innerHTML = '<span class="text-red-500 text-xs p-2">Error loading projects from server.</span>';
+            }
+        }
+
+        async function loadProjectData(projectId) {
+            try {
+                const response = await fetch(`/api/projects?t=${Date.now()}`);
+                const projects = await response.json();
+                const data = projects.find(p => p.id === projectId);
+
+                if (data) {
+                    currentEditingId = data.id;
+                    projectNameInput.value = data.projectName || data.id;
+
+                    document.getElementById('shortDescription').value = data.short_description || '';
+                    document.getElementById('longDescription').value = data.long_description || '';
+                    document.getElementById('uploadDate').value = data.upload_date || '';
+                    document.getElementById('lastUpdated').value = new Date().toISOString().split('T')[0];
+                    document.getElementById('videoUrl').value = data.video_url || '';
+                    document.getElementById('projectStatus').value = data.project_status || 'ongoing';
+                    document.getElementById('difficulty').value = data.difficulty || 'Intermediate';
+                    document.getElementById('code').value = data.code || '';
+                    document.getElementById('buttonLabel').value = data.button_label || 'None';
+                    document.getElementById('buttonUrl').value = data.button_url || '';
+                    viewsInput.value = data.views || 0;
+                    downloadsInput.value = data.downloads || 0;
+
+                    const imgCont = document.getElementById('imageUrlsContainer'); imgCont.innerHTML = '';
+                    (data.image_urls || []).forEach(url => createImageInput(imgCont, url, 'Image URL'));
+
+                    const tagsCont = document.getElementById('tagsContainer'); tagsCont.innerHTML = '';
+                    (data.tags || []).forEach(tag => createDynamicInput(tagsCont, tag, 'Tag'));
+
+                    const techCont = document.getElementById('technologiesContainer'); techCont.innerHTML = '';
+                    (data.technologies || []).forEach(tech => createDynamicInput(techCont, tech, 'Technology'));
+
+                    const memCont = document.getElementById('membersContainer'); memCont.innerHTML = '';
+                    (data.members || []).forEach(mem => createDynamicInput(memCont, mem, 'Member'));
+
+                    const sponCont = document.getElementById('sponsorsContainer'); sponCont.innerHTML = '';
+                    (data.sponsors || []).forEach(spon => createDynamicInput(sponCont, spon, 'Sponsor'));
+
+                    projectListContainer.classList.add('hidden');
+                    toggleFieldVisibility();
+
+                    statusMessage.textContent = 'Project data loaded perfectly!';
+                    statusMessage.className = "mt-6 text-center font-semibold text-green-600";
+                    setTimeout(() => statusMessage.textContent = '', 3000);
+                }
+            } catch (e) {
+                alert('Error loading project data from server.');
+            }
+        }
+
+        // Add CSV Listeners
+        document.getElementById('addCsvTagsBtn').addEventListener('click', () => processCSVInput('csvTags', document.getElementById('tagsContainer'), 'Tag'));
+        document.getElementById('addCsvTechnologiesBtn').addEventListener('click', () => processCSVInput('csvTechnologies', document.getElementById('technologiesContainer'), 'Technology'));
+        document.getElementById('addCsvMembersBtn').addEventListener('click', () => processCSVInput('csvMembers', document.getElementById('membersContainer'), 'Member'));
+        document.getElementById('addCsvSponsorsBtn').addEventListener('click', () => processCSVInput('csvSponsors', document.getElementById('sponsorsContainer'), 'Sponsor'));
+
+        // Single Add Listeners
+        document.getElementById('addTagBtn').addEventListener('click', () => createDynamicInput(document.getElementById('tagsContainer'), '', 'Tag'));
+        document.getElementById('addTechnologyBtn').addEventListener('click', () => createDynamicInput(document.getElementById('technologiesContainer'), '', 'Technology'));
+        document.getElementById('addMemberBtn').addEventListener('click', () => createDynamicInput(document.getElementById('membersContainer'), '', 'Member'));
+        document.getElementById('addSponsorBtn').addEventListener('click', () => createDynamicInput(document.getElementById('sponsorsContainer'), '', 'Sponsor'));
+        document.getElementById('addImageUrlBtn').addEventListener('click', () => createImageInput(document.getElementById('imageUrlsContainer'), '', 'Image URL'));
+
+        addNewProjectButton.addEventListener('click', () => setMode('add'));
+        updateExistingProjectButton.addEventListener('click', () => setMode('update'));
+        buttonLabelSelect.addEventListener('change', toggleFieldVisibility);
+
+        projectForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const projectName = projectNameInput.value.trim();
+            if (!projectName) { alert("Project Name is required."); return; }
+
+            statusMessage.textContent = "Saving to server & automating SEO static pages...";
+            statusMessage.className = "mt-6 text-center font-semibold text-blue-600";
+
+            const projectData = {
+                projectName: projectName,
+                short_description: document.getElementById('shortDescription').value.trim(),
+                long_description: document.getElementById('longDescription').value.trim(),
+                upload_date: document.getElementById('uploadDate').value,
+                last_updated: document.getElementById('lastUpdated').value,
+                video_url: document.getElementById('videoUrl').value.trim(),
+                image_urls: getDynamicValues(document.getElementById('imageUrlsContainer')),
+                tags: getDynamicValues(document.getElementById('tagsContainer')),
+                technologies: getDynamicValues(document.getElementById('technologiesContainer')),
+                members: getDynamicValues(document.getElementById('membersContainer')),
+                sponsors: getDynamicValues(document.getElementById('sponsorsContainer')),
+                project_status: document.getElementById('projectStatus').value,
+                difficulty: document.getElementById('difficulty').value,
+                code: document.getElementById('code').value.trim(),
+                button_label: buttonLabelSelect.value,
+                button_url: document.getElementById('buttonUrl').value.trim(),
+                views: parseInt(viewsInput.value) || 0,
+                downloads: parseInt(downloadsInput.value) || 0
+            };
+
+            try {
+                let url = '/api/projects';
+                let method = 'POST';
+
+                if (currentMode === 'update' && currentEditingId) {
+                    url = `/api/projects/${encodeURIComponent(currentEditingId)}`;
+                    method = 'PUT';
+                }
+
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(projectData)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    statusMessage.textContent = `✅ Project ${currentMode === 'add' ? 'created' : 'updated'}. SEO HTML, Sitemap & Robots fully optimized!`;
+                    statusMessage.className = "mt-6 text-center font-semibold text-green-600";
+                    setTimeout(() => { projectForm.reset(); setMode('add'); }, 2500);
+                } else {
+                    statusMessage.textContent = `❌ Error: ${result.error}`;
+                    statusMessage.className = "mt-6 text-center font-semibold text-red-600";
+                }
+            } catch (e) {
+                statusMessage.textContent = "❌ Failed to connect to server.";
+                statusMessage.className = "mt-6 text-center font-semibold text-red-600";
+            }
+        });
+
+        deleteProjectButton.addEventListener('click', async () => {
+            if (!currentEditingId) return;
+            const conf = prompt(`To confirm deletion of "${currentEditingId}", type "DeLeTe"`);
+            if (conf !== "DeLeTe") return;
+
+            try {
+                const response = await fetch(`/api/projects/${encodeURIComponent(currentEditingId)}`, { method: 'DELETE' });
+                if (response.ok) {
+                    alert('Project deleted and static files removed successfully!');
+                    setMode('add');
+                }
+            } catch (e) {
+                alert('Error connecting to server.');
+            }
+        });
+    </script>
+</body>
+
+</html>

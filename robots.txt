@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tejagavara.vercel.app/sitemap.xml

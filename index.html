@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="JAfr-FryaKeWy8tTa-9RNZAbmAiWiUMOam8Drkx1tY0" />
+    
+    <title>Teja Gavara`s Portfolio</title>
+    <meta name="description"
+      content="Teja Gavara’s portfolio showcasing expertise in App Development, AI, IoT, Robotics, and Game Design.">
+    <meta name="author" content="Teja Gavara">
+    
+    <meta property="og:title" content="Teja Gavara | Portfolio - App Development, AI, IoT & Game Design">
+    <meta property="og:description" content="Explore Teja Gavara’s portfolio in App Development, AI, IoT, and Game Design.">
+    <meta property="og:image" content="https://tejagavara.vercel.app/images/profile.png">
+    <meta property="og:url" content="https://tejagavara.vercel.app">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Teja Gavara | Portfolio">
+    <meta name="twitter:description" content="Explore Teja Gavara’s portfolio in App Development, AI, IoT, and Game Design.">
+    <meta name="twitter:image" content="https://tejagavara.vercel.app/images/profile.png">
+    
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="/images/favicon.ico?v=2"/>
+    
+    <link rel="canonical" href="https://tejagavara.vercel.app" />
+    
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Teja Gavara",
+          "url": "https://tejagavara.vercel.app",
+          "image": "https://tejagavara.vercel.app/images/profile.png",
+          "description": "Teja Gavara's portfolio showcasing expertise in App Development, AI, IoT, Robotics, and Game Design.",
+          "jobTitle": "Application Developer | Game Designer | IOT & Robotics",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Freelancer"
+          },
+          "sameAs": [
+            "https://in.linkedin.com/in/teja-gavara"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vijayawada",
+            "addressRegion": "Andhra Pradesh",
+            "addressCountry": "IN"
+          },
+          "email": "mailto:tejagavara.dev@gmail.com",
+          "potentialAction": {
+            "@type": "Action",
+            "name": "Contact Teja Gavara",
+            "target": "mailto:tejagavara.dev@gmail.com"
+          }
+        }
+    </script>
+
+  <link rel="stylesheet" href="output.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    model-viewer::part(default-progress-bar) {
+      display: none;
+    }
+
+    #mobile-menu {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      max-height: calc(100vh - 64px);
+      overflow-y: auto;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 0 0 0.5rem 0.5rem;
+      padding: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #mobile-menu {
+        background-color: #1F2937;
+        color: #f9f9f9;
+      }
+
+      #mobile-menu a {
+        color: #f9f9f9;
+      }
+
+      #mobile-menu a:hover {
+        color: #4A90E2;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+
+  <header
+    class="bg-white shadow-md py-4 px-6 md:px-10 lg:px-16 flex justify-between items-center rounded-b-lg sticky top-0 z-50 dark:bg-gray-800 dark:text-white">
+    <div class="flex items-center">
+      <a href="index.html"
+        class="text-2xl font-bold text-gray-800 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition duration-300 ease-in-out">
+        <span class="text-blue-600">G</span>TEJA
+      </a>
+    </div>
+
+    <button id="menu-btn" class="md:hidden text-gray-700 dark:text-white focus:outline-none" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <nav id="menu" class="hidden md:flex">
+      <ul class="flex flex-col md:flex-row md:space-x-8">
+        <li><a href="#"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Home</a>
+        </li>
+        <li><a href="projects.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Projects</a>
+        </li>
+        <li><a href="about.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">About</a>
+        </li>
+        <li><a href="contact.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav id="mobile-menu" class="hidden bg-white shadow-md rounded-b-lg md:hidden px-6 py-4 dark:bg-gray-900">
+    <ul class="flex flex-col space-y-3">
+      <li><a href="#"
+          class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Home</a>
+      </li>
+      <li><a href="projects.html"
+          class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Projects</a>
+      </li>
+      <li><a href="about.html"
+          class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">About</a>
+      </li>
+      <li><a href="contact.html"
+          class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="flex-grow flex flex-col items-center justify-center p-6 space-y-16 max-w-7xl mx-auto w-full">
+
+    <div
+      class="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-lg shadow-lg max-w-6xl w-full gap-8 dark:bg-gray-800 dark:text-white">
+      <div class="text-center md:text-left md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
+          Hello! I'm <span class="text-blue-600">Gavara Teja</span>
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+          An Aspiring developer with a focus on Application Development, Game Design, IoT, and AI. Passionate about creating innovative
+          solutions and continuously expanding my technical skills.
+        </p>
+        <a href="projects.html"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+          View My Projects
+        </a>
+      </div>
+
+      <div class="w-full md:w-1/2 h-72 md:h-96 relative">
+        <div id="loading-spinner" class="absolute inset-0 flex justify-center items-center">
+          <div class="text-center">
+            <svg class="animate-spin h-12 w-12 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor">
+              <path class="opacity-75" fill="none" d="M4 12a8 8 0 0 1 16 0" stroke-linecap="round" stroke-width="4"></path>
+            </svg>
+            <p class="mt-2 text-lg">Loading Surprise...</p>
+          </div>
+        </div>
+        
+        <p id="sorry-message" class="text-lg text-red-500 hidden absolute inset-0 flex justify-center items-center">
+              Sorry, your browser doesn't support this content.
+        </p>
+
+        <model-viewer id="earth-model" src="Models/Earth.glb"
+          alt="A 3D model of an Earth representing Teja Gavara's portfolio" auto-rotate camera-controls shadow-intensity="0"
+          class="w-full h-full rounded-lg" loading="eager" reveal="auto" animation-name="rotation" animation-speed="1" loop
+          autoplay camera-orbit="0deg 75deg 5.5m">
+        </model-viewer>
+      </div>
+
+      <script>
+        const modelViewer = document.querySelector('model-viewer');
+        const spinner = document.getElementById('loading-spinner');
+        const loadingMessage = document.querySelector('#loading-spinner p');
+        const sorryMessage = document.getElementById('sorry-message');
+
+        modelViewer.addEventListener('load', () => {
+          spinner.style.display = 'none';
+        });
+
+        function hideLoading(delay) {
+          setTimeout(function () {
+            const spinner = document.getElementById('loading-spinner');
+            if (spinner) {
+              spinner.style.display = 'none';
+            }
+          }, delay * 1000);
+        }
+
+        setTimeout(function () {
+          if (loadingMessage && spinner.style.display !== 'none') {
+            loadingMessage.textContent = 'Taking longer than expected...';
+            setTimeout(function () {
+              if (spinner.style.display !== 'none') {
+                spinner.style.display = 'none';
+                sorryMessage.classList.remove('hidden');
+              }
+            }, 15000);
+          }
+        }, 5000);
+      </script>
+
+
+    </div>
+
+    <section class="bg-white p-5 rounded-lg shadow-lg max-w-6xl w-full relative dark:bg-gray-800 dark:text-white">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">My Quote</h2>
+
+      <div class="text-6xl text-blue-200 absolute top-4 left-6 select-none pointer-events-none">“</div>
+
+      <div class="relative max-w-3xl mx-auto">
+        <blockquote class="text-center text-xl italic text-gray-700 dark:text-gray-300 z-10">
+          “ Even the most powerful explosion begin with a small ignition. ”
+        </blockquote>
+        <div class="mt-4 text-base font-semibold text-gray-500 text-right dark:text-gray-400">
+          ~ Teja G
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-lg max-w-6xl w-full relative dark:bg-gray-800 dark:text-white">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">About Me</h2>
+    
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        
+        <script>
+          fetch('info.json')
+            .then(response => response.json())
+            .then(data => {
+              const profileImage = document.getElementById('profileImage');
+              profileImage.src = data.profile;
+            })
+            .catch(error => console.error('Error loading profile image:', error));
+        </script>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto text-justify">
+          A driven developer passionate about turning innovative ideas into real-world solutions. 
+          Holding a B.Tech in Information Technology, core competencies span Application 
+          Development, Game Design, IoT, and AI.
+          <br /><br />
+          With hands-on experience building complex engineering projects like an Automatic Cooking Machine 
+          and a 6 DOF Robotic Hand, this work combines both software and hardware to create seamless solutions. 
+          Professional background includes specialized internships in AI-ML and Cloud (AWS), backed by industry 
+          certifications from NPTEL, CISCO, EDX, and AWS.
+        </p>
+      </div>
+    
+      <div class="text-center mt-6">
+        <a href="about.html"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition duration-300">
+          Read More
+        </a>
+      </div>
+    </section>
+
+
+    <section class="bg-blue-600 text-white p-12 rounded-lg shadow-lg max-w-6xl w-full text-center">
+      <h2 class="text-4xl font-bold mb-4">Interested in Working Together?</h2>
+      <p class="mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
+        Whether you have a project in mind or just want to say hello, feel free to reach out. I’m always open
+        to
+        exciting opportunities and collaborations.
+      </p>
+      <a href="contact.html"
+        class="inline-block bg-white text-blue-600 font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300">
+        Contact Me
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center py-6 mt-auto rounded-t-lg">
+    <p>&copy; <span id="year"></span> G TEJA. All rights reserved.</p>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J'].includes(e.key.toUpperCase()))) {
+        e.preventDefault();
+      }
+    });
+
+    const btn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>

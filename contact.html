@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Contact Teja Gavara</title>
+    
+    <meta name="description"
+        content="Teja Gavara's portfolio showcasing his expertise in Application Development, AI, IoT, Robotics, and Game Design projects.">
+    <meta name="author" content="Teja Gavara">
+    
+    <meta property="og:title" content="Teja Gavara | Portfolio">
+    <meta property="og:description"
+        content="Explore Teja Gavara's portfolio: App development, AI, IoT, and game design projects.">
+    <meta property="og:image" content="https://tejagavara.vercel.app/images/profile.png">
+    <meta property="og:url" content="https://tejagavara.vercel.app">
+
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="/images/favicon.ico?v=2" />
+    <link rel="stylesheet" href="output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .linkedin-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        .linkedin-card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 10%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .linkedin-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .linkedin-info h3 {
+            margin: 0 0 6px;
+            font-size: 22px;
+            color: #0077b5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .linkedin-info p {
+            margin: 0 0 10px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .linkedin-info a {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #0077b5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .linkedin-info a:hover {
+            background-color: #005983;
+        }
+
+        model-viewer::part(default-progress-bar) {
+            display: none;
+        }
+        
+        #mobile-menu {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            max-height: calc(100vh - 64px);
+            overflow-y: auto;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 0.5rem 0.5rem;
+            padding: 1rem;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+        #mobile-menu {
+            background-color: #1F2937;
+            color: #f9f9f9;
+        }
+        
+        #mobile-menu a {
+            color: #f9f9f9;
+        }
+        
+        #mobile-menu a:hover {
+            color: #4A90E2;
+        }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+    <header
+        class="bg-white shadow-md py-4 px-6 md:px-10 lg:px-16 flex justify-between items-center rounded-b-lg sticky top-0 z-50 dark:bg-gray-800 dark:text-white">
+    <div class="flex items-center">
+        <a href="index.html"
+        class="text-2xl font-bold text-gray-800 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition duration-300 ease-in-out">
+        <span class="text-blue-600">G</span>TEJA
+        </a>
+    </div>
+    <button id="menu-btn" class="md:hidden text-gray-700 dark:text-white focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <nav id="menu" class="hidden md:flex">
+        <ul class="flex flex-col md:flex-row md:space-x-8">
+        <li><a href="index.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Home</a>
+        </li>
+        <li><a href="projects.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Projects</a>
+        </li>
+        <li><a href="about.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">About</a>
+        </li>
+        <li><a href="#"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 ease-in-out px-3 py-2 rounded-md">Contact</a>
+        </li>
+        </ul>
+    </nav>
+    </header>
+
+    <nav id="mobile-menu" class="hidden bg-white shadow-md rounded-b-lg md:hidden px-6 py-4 dark:bg-gray-900">
+    <ul class="flex flex-col space-y-3">
+        <li><a href="index.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Home</a>
+        </li>
+        <li><a href="projects.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Projects</a>
+        </li>
+        <li><a href="about.html"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">About</a>
+        </li>
+        <li><a href="#"
+            class="block text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-2 rounded-md transition duration-300">Contact</a>
+        </li>
+    </ul>
+    </nav>
+
+    <main class="flex flex-col items-center justify-center min-h-screen p-6 md:p-10 lg:p-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 text-center dark:text-white w-full">
+            Get in <span class="text-blue-600">Touch</span>
+        </h1>
+    
+        <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 w-full max-w-6xl">
+        
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl w-full text-center dark:bg-gray-800 self-start">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 dark:text-white">Send Me a Message</h2>
+                <form id="contactForm" class="space-y-4 text-left">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                        <input type="text" id="name" name="name" maxlength="16" required
+                            class="mt-1 block w-full rounded-md border-gray-300 border dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 dark:bg-gray-700 dark:text-white bg-white border-black">
+                        <!-- <small class="text-gray-500 mt-1 block">*Maximum 16 characters allowed.</small> -->
+                        </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="mt-1 block w-full rounded-md border-gray-300 border dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 dark:bg-gray-700 dark:text-white bg-white border-black">
+                        <small class="text-gray-500 mt-2 block">*Please provide a valid email address, and we'll contact you with that
+                            email.</small></div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="mt-1 block w-full rounded-md border-gray-300 border dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 dark:bg-gray-700 dark:text-white bg-white border-black min-h-[160px] resize-y"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"
+                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl w-full text-center dark:bg-gray-800 self-start">
+                <p class="text-lg leading-relaxed mb-4 dark:text-white">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out!
+                </p>
+                <div class="space-y-4">
+                    <p class="text-xl font-semibold dark:text-white">
+                        Email: 
+                        <a class="text-blue-600 hover:underline email-link" href="mailto:tejagavara.dev@gmail.com??subject=Inquiry%20From%20Portfolio">TejaGavara.dev</a>
+                    </p>
+
+                    <div class="mt-6">
+                        <p class="dark:text-gray-400">Connect with me on social media:</p>
+        
+                        <div class="linkedin-card">
+                            <img src="images/linkdin.png" alt="LinkedIn">
+                            <div class="linkedin-info">
+                                <h3>Gavara Teja</h3>
+                                <p>App Development & Game Design Enthusiast</p>
+                                <a href="https://in.linkedin.com/in/teja-gavara" target="_blank">View LinkedIn Profile</a>
+                            </div>
+                        </div>
+        
+                        <div class="linkedin-card">
+                            <img src="images/telegram.png" alt="Telegram">
+                            <div class="linkedin-info">
+                                <h3>Discussions</h3>
+                                <p>Community & Chat</p>
+                                <a href="https://t.me/gavaratejacommunity" target="_blank">Join Telegram Channel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto rounded-t-lg">
+        <p>&copy; <span id="year"></span> G TEJA. All rights reserved.</p>
+
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+    
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J'].includes(e.key.toUpperCase()))) {
+                e.preventDefault();
+            }
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+    <script>
+        function fetchFormURL() {
+            return fetch('/info.json')
+                .then(response => response.json())
+                .then(data => {
+                    return data.form;
+                })
+                .catch(error => {
+                    alert('There was an error to send the message. Please try again later.');
+                    return null;
+                });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formElement = event.target;
+            const userName = formElement.querySelector('#name').value;
+            const userEmail = formElement.querySelector('#email').value;
+            const userMessage = formElement.querySelector('#message').value;
+            const projectName = 'Contact';
+            const amount = '-';
+            const transactionId = '-';
+
+            fetchFormURL().then(formURLTemplate => {
+                if (formURLTemplate) {
+                    const formURL = formURLTemplate
+                        .replace("(a)", encodeURIComponent(projectName))
+                        .replace("(b)", encodeURIComponent(userName))
+                        .replace("(c)", encodeURIComponent(userEmail))
+                        .replace("(d)", encodeURIComponent(userMessage))
+                        .replace("(e)", encodeURIComponent(amount))
+                        .replace("(f)", encodeURIComponent(transactionId));
+
+                    fetch(formURL, {
+                        method: 'POST',
+                        mode: 'no-cors'
+                    })
+                        .then(() => {
+                            alert('Success', 'Your message has been sent successfully! Thank you for reaching out.');
+                            formElement.reset();
+                        })
+                        .catch(error => {
+                            console.error('Error submitting form:', error);
+                            alert('Error', 'There was an error sending your message. Please try again or contact me directly via email.');
+                        });
+                } else {
+                    alert('Error', 'Message submission is not available. Please try again later.');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
